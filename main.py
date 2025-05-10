@@ -7,6 +7,10 @@ app = FastAPI()
 
 items_db = []
 
+@app.get("/")
+def read_root():
+    return {"message": "Bienvenue sur mon API FastAPI déployée sur Render"}
+
 
 @app.get("/items", response_model=List[Item])
 def get_items():
